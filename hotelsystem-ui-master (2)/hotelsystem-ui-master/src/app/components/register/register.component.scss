@@ -1,0 +1,45 @@
+.register-container {
+  height: 120vh;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .register-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px 0;
+
+      .register-title {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+.mat-form-field {
+  width: 100%;
+  min-width: 300px;
+  font-size: 18px;
+}
+
+mat-card-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.error {
+  padding: 16px;
+  width: 300px;
+  color: white;
+  background-color: red;
+}

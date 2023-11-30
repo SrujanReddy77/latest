@@ -1,0 +1,35 @@
+<div style="height: 100%">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Hotel Code Era</span>
+      <span class="menu-spacer"></span>
+      <div fxShow="true" fxHide.lt-md>
+        <ng-container *ngFor="let menu of menuItems">
+          <a [routerLink]="menu.link" mat-button>{{ menu.text }}</a>
+        </ng-container>
+        <!-- <a (click)="logout()" href="" mat-button *ngIf="isLoggedIn">Logout</a> -->
+        <span (click)="logout()" *ngIf="isLoggedIn" style="cursor: pointer; font-size: 14px">Logout</span>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-sidenav-container fxFlexFill>
+    <mat-sidenav #sidenav>
+      <mat-nav-list>
+        <ng-container *ngFor="let menu of menuItems">
+          <a [routerLink]="menu.link" mat-list-item>{{ menu.text }}</a>
+        </ng-container>
+        <li (click)="logout()" mat-list-item *ngIf="isLoggedIn">Logout</li>
+        <a (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill>
+      <main>
+        <router-outlet> </router-outlet>
+      </main>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
